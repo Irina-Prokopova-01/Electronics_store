@@ -1,0 +1,92 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$VwTVbdB63HCDpkl8YMhQaK$M4WyohV0WKyuf5f63lFM+aIlFtEXb3IYt7uRVjrp9bc=",
+        "last_login": "2025-03-28T10:48:11.497Z",
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-28T07:01:10.271Z",
+        "email": "irina@yandex.ru",
+        "first_name": "",
+        "last_name": "",
+        "phone": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "12345",
+        "last_login": "2025-03-28T07:04:31Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-03-28T07:04:17Z",
+        "email": "IP7935@yandex.ru",
+        "first_name": "Prokopova",
+        "last_name": "Irina",
+        "phone": "89139007930",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$wq5TOE8ytaenn5PvoYiVHp$LWBzIE0vnpaDS3KVbpumgkfFqSyUcwxQO6/G85OB8vw=",
+        "last_login": null,
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-28T10:46:41Z",
+        "email": "katia@yandex.ru",
+        "first_name": "Катя",
+        "last_name": "Прокопова",
+        "phone": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$wNaueVBfJwksEQwhM346xS$SU10izQY/SQf+CVFA2oLEPO5i31gVlVFjLwPV3F1lgE=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-28T11:10:22Z",
+        "email": "dima@yandex.ru",
+        "first_name": "Дмитрий",
+        "last_name": "Прокопов",
+        "phone": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$wx4gE8Ycx0CxCj6XtadsO6$jzg0KtDX3fLW6YtzQwfXKho3gdMvoawd66k+KIj7nTw=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-28T11:24:42.829Z",
+        "email": "yan@yandex.ru",
+        "first_name": "Ян",
+        "last_name": "Прокопов",
+        "phone": null,
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

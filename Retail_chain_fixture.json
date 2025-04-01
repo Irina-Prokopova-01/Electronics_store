@@ -1,0 +1,51 @@
+[
+{
+    "model": "supplier.retail_chain",
+    "pk": 1,
+    "fields": {
+        "name": "OOO Электрик",
+        "contacts": 4,
+        "provider_retail_chain": null,
+        "provider_factory": 1,
+        "level": 1,
+        "debt": "890000.00",
+        "created_at": "2025-03-28T10:03:50.144Z",
+        "products": [
+            4
+        ]
+    }
+},
+{
+    "model": "supplier.retail_chain",
+    "pk": 2,
+    "fields": {
+        "name": "ООО Чайник",
+        "contacts": 8,
+        "provider_retail_chain": 1,
+        "provider_factory": null,
+        "level": 1,
+        "debt": "47589.00",
+        "created_at": "2025-03-31T07:58:47.709Z",
+        "products": [
+            4,
+            9
+        ]
+    }
+},
+{
+    "model": "supplier.retail_chain",
+    "pk": 3,
+    "fields": {
+        "name": "ООО Блендер",
+        "contacts": 11,
+        "provider_retail_chain": 1,
+        "provider_factory": null,
+        "level": 1,
+        "debt": "0.00",
+        "created_at": "2025-03-31T08:07:17.538Z",
+        "products": [
+            11
+        ]
+    }
+}
+]

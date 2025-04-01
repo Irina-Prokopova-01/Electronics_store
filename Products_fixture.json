@@ -1,0 +1,102 @@
+[
+{
+    "model": "supplier.products",
+    "pk": 1,
+    "fields": {
+        "title": "Фен",
+        "model": "123",
+        "product_launch_date": "2020-03-27",
+        "created_at": "2025-03-28T09:50:18.650Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 2,
+    "fields": {
+        "title": "Телефон",
+        "model": "ru321",
+        "product_launch_date": "2024-03-28",
+        "created_at": "2025-03-28T09:53:00.596Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 3,
+    "fields": {
+        "title": "кухонный комбайн",
+        "model": "3421",
+        "product_launch_date": "2024-03-28",
+        "created_at": "2025-03-28T09:57:14.842Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 4,
+    "fields": {
+        "title": "Чайник",
+        "model": "9865",
+        "product_launch_date": "2020-03-27",
+        "created_at": "2025-03-28T10:03:46.125Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 5,
+    "fields": {
+        "title": "Тостер",
+        "model": "987",
+        "product_launch_date": "2025-01-28",
+        "created_at": "2025-03-28T10:28:22.269Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 6,
+    "fields": {
+        "title": "Вафельница",
+        "model": "879",
+        "product_launch_date": "2023-03-31",
+        "created_at": "2025-03-31T07:15:43.845Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 7,
+    "fields": {
+        "title": "Пылесос",
+        "model": "5477",
+        "product_launch_date": "2025-03-13",
+        "created_at": "2025-03-31T07:42:51.173Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 8,
+    "fields": {
+        "title": "Светильник",
+        "model": "027589",
+        "product_launch_date": "2025-03-01",
+        "created_at": "2025-03-31T07:57:12.051Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 9,
+    "fields": {
+        "title": "Плита",
+        "model": "647",
+        "product_launch_date": "2025-03-09",
+        "created_at": "2025-03-31T07:58:32.491Z"
+    }
+},
+{
+    "model": "supplier.products",
+    "pk": 10,
+    "fields": {
+        "title": "Зажигалка",
+        "model": "657",
+        "product_launch_date": "2025-02-07",
+        "created_at": "2025-03-31T08:02:16.970Z"
+    }
+}
+]
