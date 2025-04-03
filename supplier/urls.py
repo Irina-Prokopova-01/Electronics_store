@@ -1,7 +1,10 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import SimpleRouter
+
+from supplier.views import (ContactsViewSet, FactoryViewSet, IndividualViewSet,
+                            ProductsViewSet, RetailViewSet)
+
 from .apps import SupplierConfig
-from supplier.views import FactoryViewSet, RetailViewSet, IndividualViewSet, ProductsViewSet, ContactsViewSet
 
 app_name = SupplierConfig.name
 

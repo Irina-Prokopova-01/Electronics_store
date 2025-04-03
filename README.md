@@ -1,30 +1,57 @@
-from django.contrib.auth.models import AbstractUser
-from django.db import models
+# Electronics_store API
+## Описание проекта
 
+Electronics_store API — это веб-приложение, реализованное с использованием Django и Django REST Framework (DRF). 
+Оно представляет собой модель иерархической сети по продаже электроники, состоящей из следующих звеньев:
+* Завод (всегда уровень 0)
+* Розничная сеть (уровень 1)
+* Индивидуальный предприниматель (уровень 1 или 2 в зависимости от иерархии)
 
-class User(AbstractUser):
-    """
-    Модель пользователя
-    """
-    username = None
-    email = models.EmailField(unique=True, help_text="Укажите вашу почту")
-    first_name = models.CharField(max_length=30, help_text="Укажите ваше имя")
-    last_name = models.CharField(max_length=30, help_text="Укажите вашу фамилию")
-    phone = models.CharField(
-        max_length=20,
-        verbose_name="Номер телефона",
-        blank=True,
-        null=True,
-        help_text="Введите номер телефона",
-    )
+Каждое звено сети может иметь одного поставщика оборудования из более высокого уровня иерархии. 
+Приложение предоставляет API для управления этими звеньями, включая возможность создания, чтения, обновления и удаления (CRUD операций), 
+а также фильтрации по определённым полям.
 
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
+## Функциональные возможности
+Модели данных:
+* Factory
+* Retail_chain (связь с поставщиком выше по иерархии)
+* Individual_entrepreneur (связь с поставщиком выше по иерархии)
+* Contacts (связаны с звеньями сети)
+* Products (связаны с звеньями сети)
 
-    def __str__(self):
-        return f"{self.email}"
+## API:
+* Полный CRUD для моделей сети.
+* Фильтрация звеньев по стране.
+* Аутентификация и авторизация: доступ к API только для активных пользователей.
+* Автоматическая документация API с использованием Swagger и ReDoc.
 
-    class Meta:
-        verbose_name = "Пользователь"
-        verbose_name_plural = "Пользователи"
-        ordering = ("email",)
+## Админ-панель:
+* Просмотр и управление звеньями сети, контактной информацией и продуктами.
+* Фильтрация звеньев по городу.
+* Действие для обнуления задолженности перед поставщиком у выбранных моделей звеньев сети.
+
+## Тестирование:
+Набор тестов для проверки корректности бизнес-логики и работы API.
+
+## Технологии
+* Язык программирования: 
+  Python 3.12+
+* Фреймворки:
+  Django 5.1+
+  Django REST Framework 3.15
+* База данных: PostgreSQL 15+
+* Дополнительные библиотеки:
+  django-filter для расширенной фильтрации.
+  drf-yasg для автоматической генерации документации API.
+  pytest-django для тестирования.
+
+## Инструкция по запуску проекта
+* Клонирование репозитория
+ git clone https://github.com/Irina-Prokopova-01/Electronics_store
+* Установка зависимостей
+ для pip: pip install -r requirements.txt
+ для poetry: poetry install
+* Запуск проекта
+ python manage.py runserver
+* Доступ к документации API
+ Swagger UI: http://127.0.0.1:8000/swagger/

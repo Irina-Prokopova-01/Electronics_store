@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.http import HttpResponse
-from supplier.models import Factory, Individual_entrepreneur, Retail_chain, Contacts, Products
+
+from supplier.models import (Contacts, Factory, Individual_entrepreneur,
+                             Products, Retail_chain)
 
 
 class CityFilter(admin.SimpleListFilter):
@@ -9,13 +11,14 @@ class CityFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         cities = Contacts.objects.values_list("city", flat=True).distinct()
-        return [(city, city) for city in cities if city]  # Возвращаем уникальные города для фильтрации
+        return [
+            (city, city) for city in cities if city
+        ]  # Возвращаем уникальные города для фильтрации
 
     def queryset(self, request, queryset):
         if self.value():
             return queryset.filter(contacts__city=self.value())
         return queryset
-
 
 
 @admin.action(description="Списание задолженности перед поставщиком.")
@@ -30,7 +33,7 @@ def get_provider(self, obj):
         return obj.provider_factory.name
     elif obj.provider_retail_chain:
         return obj.provider_retail_chain.name
-    return 'Нет поставщика'
+    return "Нет поставщика"
 
 
 @admin.register(Factory)
@@ -52,7 +55,7 @@ class RetailAdmin(admin.ModelAdmin):
     def get_provider(self, obj):
         if obj.provider_factory:
             return obj.provider_factory.name
-        return 'Нет поставщика'
+        return "Нет поставщика"
 
 
 @admin.register(Individual_entrepreneur)
@@ -68,7 +71,7 @@ class IndividualAdmin(admin.ModelAdmin):
             return obj.provider_factory.name
         elif obj.provider_retail_chain:
             return obj.provider_retail_chain.name
-        return 'Нет поставщика'
+        return "Нет поставщика"
 
 
 @admin.register(Contacts)

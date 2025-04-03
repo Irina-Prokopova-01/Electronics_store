@@ -14,6 +14,7 @@ LEVEL_factory = [
 
 class Contacts(models.Model):
     """Модель контактов"""
+
     title = models.CharField(max_length=255, verbose_name="Укажите название компании")
     email = models.EmailField(help_text="Укажите почту компании")
     country = models.CharField(max_length=255, verbose_name="Укажите страну")
@@ -36,6 +37,7 @@ class Contacts(models.Model):
 
 class Products(models.Model):
     """Модель продукта"""
+
     title = models.CharField(max_length=255, verbose_name="Название продукта")
     model = models.CharField(max_length=255, verbose_name="Название модели")
     product_launch_date = models.DateField(verbose_name="Дата выхода продукта на рынок")
@@ -52,12 +54,26 @@ class Products(models.Model):
 
 class Factory(models.Model):
     """Модель завода"""
+
     name = models.CharField(max_length=255, verbose_name="Укажите название компании")
-    contacts = models.OneToOneField(Contacts, on_delete=models.CASCADE, related_name="factory_contacts", verbose_name="Контакты")
+    contacts = models.OneToOneField(
+        Contacts,
+        on_delete=models.CASCADE,
+        related_name="factory_contacts",
+        verbose_name="Контакты",
+    )
     products = models.ManyToManyField(Products, verbose_name="Продукты")
-    # provider_factory = models.ForeignKey("self", on_delete=models.SET_NULL, blank=True, null=True, related_name="factory_factory_providers", verbose_name="Поставщик завод")
-    level = models.PositiveIntegerField(verbose_name="Уровень в иерархии", choices=LEVEL_factory, default=0)
-    debt = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, default=Decimal('0.00'), verbose_name="Задолжность перед поставщиком")
+    level = models.PositiveIntegerField(
+        verbose_name="Уровень в иерархии", choices=LEVEL_factory, default=0
+    )
+    debt = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        blank=True,
+        null=True,
+        default=Decimal("0.00"),
+        verbose_name="Задолжность перед поставщиком",
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     class Meta:
@@ -69,16 +85,36 @@ class Factory(models.Model):
         return f"{self.name}, {self.contacts}"
 
 
-
 class Retail_chain(models.Model):
     """Модель розничной сети"""
+
     name = models.CharField(max_length=255, verbose_name="Укажите название компании")
-    contacts = models.OneToOneField(Contacts, related_name="retail_chain_contacts", on_delete=models.CASCADE, verbose_name="Контакты")
+    contacts = models.OneToOneField(
+        Contacts,
+        related_name="retail_chain_contacts",
+        on_delete=models.CASCADE,
+        verbose_name="Контакты",
+    )
     products = models.ManyToManyField(Products, verbose_name="Продукты")
-    # provider_retail_chain = models.ForeignKey("self", on_delete=models.SET_NULL, blank=True, null=True, related_name="retail_chain_retail_chain_providers", verbose_name="Поставщик сеть")
-    provider_factory = models.ForeignKey(Factory, on_delete=models.SET_NULL, blank=True, null=True, related_name="Поставщик", verbose_name="Поставщик завод")
-    level = models.PositiveIntegerField(verbose_name="Уровень в иерархии", choices=LEVEL, default=1)
-    debt = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, default=Decimal('0.00'), verbose_name="Задолжность перед поставщиком")
+    provider_factory = models.ForeignKey(
+        Factory,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name="Поставщик",
+        verbose_name="Поставщик завод",
+    )
+    level = models.PositiveIntegerField(
+        verbose_name="Уровень в иерархии", choices=LEVEL, default=1
+    )
+    debt = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        blank=True,
+        null=True,
+        default=Decimal("0.00"),
+        verbose_name="Задолжность перед поставщиком",
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     class Meta:
@@ -93,7 +129,7 @@ class Retail_chain(models.Model):
         """Идентификация поставщика"""
         if self.provider_factory:
             return self.provider_factory.name
-        return 'Нет поставщика'
+        return "Нет поставщика"
 
     # def get_level(self):
     #     """Присвоение уровня в иерархии"""
@@ -107,14 +143,42 @@ class Retail_chain(models.Model):
 
 class Individual_entrepreneur(models.Model):
     """Модель ИП"""
+
     name = models.CharField(max_length=255, verbose_name="Укажите название компании")
-    contacts = models.OneToOneField(Contacts, on_delete=models.CASCADE, related_name="individual_entrepreneur_contacts", verbose_name="Контакты")
+    contacts = models.OneToOneField(
+        Contacts,
+        on_delete=models.CASCADE,
+        related_name="individual_entrepreneur_contacts",
+        verbose_name="Контакты",
+    )
     products = models.ManyToManyField(Products, verbose_name="Продукты")
-    level = models.PositiveIntegerField(verbose_name="Уровень в иерархии", choices=LEVEL, default=2)
-    provider_factory = models.ForeignKey(Factory, on_delete=models.SET_NULL, blank=True, null=True, related_name="individual_entrepreneur_factory_providers", verbose_name="Поставщик завод")
-    provider_retail_chain = models.ForeignKey(Retail_chain, on_delete=models.SET_NULL, blank=True, null=True, related_name="individual_entrepreneur_retail_chain_providers", verbose_name="Поставщик ритейлер")
-    # provider_individual_entrepreneur = models.ForeignKey("self", on_delete=models.SET_NULL, blank=True, null=True, related_name="individual_entrepreneur_Individual_entrepreneur_providers", verbose_name="Поставщик ИП")
-    debt = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, default=Decimal('0.00'), verbose_name="Задолжность перед поставщиком")
+    level = models.PositiveIntegerField(
+        verbose_name="Уровень в иерархии", choices=LEVEL, default=2
+    )
+    provider_factory = models.ForeignKey(
+        Factory,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name="individual_entrepreneur_factory_providers",
+        verbose_name="Поставщик завод",
+    )
+    provider_retail_chain = models.ForeignKey(
+        Retail_chain,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name="individual_entrepreneur_retail_chain_providers",
+        verbose_name="Поставщик ритейлер",
+    )
+    debt = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        blank=True,
+        null=True,
+        default=Decimal("0.00"),
+        verbose_name="Задолжность перед поставщиком",
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     class Meta:
@@ -131,7 +195,7 @@ class Individual_entrepreneur(models.Model):
             return self.provider_factory.name
         elif self.provider_retail_chain:
             return self.provider_retail_chain.name
-        return 'Нет поставщика'
+        return "Нет поставщика"
 
     # def get_level(self):
     #     """Присвоение уровня в иерархии"""
@@ -143,4 +207,3 @@ class Individual_entrepreneur(models.Model):
     #         level +=2
     #         return level
     #     return "Уровень поставщика не определен"
-

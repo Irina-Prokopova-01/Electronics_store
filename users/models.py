@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
 ROLE_CHOICES = (
     ("staff", "Staff"),
     ("admin", "Admin"),
@@ -12,10 +11,15 @@ class User(AbstractUser):
     """
     Модель пользователя
     """
+
     username = None
     email = models.EmailField(unique=True, help_text="Укажите вашу почту")
-    first_name = models.CharField(max_length=30, help_text="Укажите ваше имя")
-    last_name = models.CharField(max_length=30, help_text="Укажите вашу фамилию")
+    first_name = models.CharField(
+        max_length=30, blank=True, null=True, help_text="Укажите ваше имя"
+    )
+    last_name = models.CharField(
+        max_length=30, blank=True, null=True, help_text="Укажите вашу фамилию"
+    )
     phone = models.CharField(
         max_length=20,
         verbose_name="Номер телефона",
@@ -34,4 +38,3 @@ class User(AbstractUser):
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
         ordering = ("email",)
-

@@ -1,12 +1,13 @@
 from rest_framework import serializers
-from supplier.validators import change_debt
 
-from supplier.models import Contacts, Factory, Products, Individual_entrepreneur, Retail_chain
+from supplier.models import (Contacts, Factory, Individual_entrepreneur,
+                             Products, Retail_chain)
+from supplier.validators import change_debt
 
 
 class ContactsSerializer(serializers.ModelSerializer):
     """
-    Сериализатор отзыва
+    Сериализатор контакта
     """
 
     class Meta:
@@ -16,7 +17,7 @@ class ContactsSerializer(serializers.ModelSerializer):
 
 class ProductsSerializer(serializers.ModelSerializer):
     """
-    Сериализатор отзыва
+    Сериализатор продукта
     """
 
     class Meta:
@@ -26,6 +27,7 @@ class ProductsSerializer(serializers.ModelSerializer):
 
 class FactorySerializer(serializers.ModelSerializer):
     """Сериализатор для модели завода"""
+
     contacts = ContactsSerializer()
 
     def create(self, validation_data):
@@ -42,17 +44,20 @@ class FactorySerializer(serializers.ModelSerializer):
         decimal_places=2,
         required=False,
         allow_null=True,
-        validators=[change_debt]
+        validators=[change_debt],
     )
 
 
 class IndividualSerializer(serializers.ModelSerializer):
     """Сериализатор для модели ИП"""
+
     contacts = ContactsSerializer()
 
     def create(self, validation_data):
         contacts = Contacts.objects.create(**validation_data.pop("contacts"))
-        individual_entrepreneur = Individual_entrepreneur.objects.create(contacts=contacts, **validation_data)
+        individual_entrepreneur = Individual_entrepreneur.objects.create(
+            contacts=contacts, **validation_data
+        )
         return individual_entrepreneur
 
     class Meta:
@@ -64,12 +69,13 @@ class IndividualSerializer(serializers.ModelSerializer):
         decimal_places=2,
         required=False,
         allow_null=True,
-        validators=[change_debt]
+        validators=[change_debt],
     )
 
 
 class RetailSerializer(serializers.ModelSerializer):
     """Сериализатор для модели сети"""
+
     contacts = ContactsSerializer()
 
     def create(self, validation_data):
@@ -86,6 +92,5 @@ class RetailSerializer(serializers.ModelSerializer):
         decimal_places=2,
         required=False,
         allow_null=True,
-        validators=[change_debt]
+        validators=[change_debt],
     )
-
