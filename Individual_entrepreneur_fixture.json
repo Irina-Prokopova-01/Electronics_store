@@ -1,0 +1,82 @@
+[
+{
+    "model": "supplier.individual_entrepreneur",
+    "pk": 1,
+    "fields": {
+        "name": "ИП Прокопова",
+        "contacts": 3,
+        "level": 2,
+        "provider_factory": 2,
+        "provider_retail_chain": null,
+        "debt": "0.00",
+        "created_at": "2025-03-28T09:57:44.395Z",
+        "products": [
+            3
+        ]
+    }
+},
+{
+    "model": "supplier.individual_entrepreneur",
+    "pk": 3,
+    "fields": {
+        "name": "ИП Петров",
+        "contacts": 7,
+        "level": 0,
+        "provider_factory": null,
+        "provider_retail_chain": null,
+        "debt": "5000.00",
+        "created_at": "2025-03-31T07:44:40.418Z",
+        "products": [
+            7
+        ]
+    }
+},
+{
+    "model": "supplier.individual_entrepreneur",
+    "pk": 4,
+    "fields": {
+        "name": "ИП Маркова",
+        "contacts": 9,
+        "level": 1,
+        "provider_factory": 2,
+        "provider_retail_chain": null,
+        "debt": "6757.00",
+        "created_at": "2025-03-31T07:57:15.514Z",
+        "products": [
+            8
+        ]
+    }
+},
+{
+    "model": "supplier.individual_entrepreneur",
+    "pk": 5,
+    "fields": {
+        "name": "ИП Слон",
+        "contacts": 12,
+        "level": 2,
+        "provider_factory": 2,
+        "provider_retail_chain": null,
+        "debt": "344.00",
+        "created_at": "2025-03-31T08:08:51.390Z",
+        "products": [
+            12
+        ]
+    }
+},
+{
+    "model": "supplier.individual_entrepreneur",
+    "pk": 6,
+    "fields": {
+        "name": "ИП Дрель",
+        "contacts": 14,
+        "level": 1,
+        "provider_factory": 4,
+        "provider_retail_chain": null,
+        "debt": "0.00",
+        "created_at": "2025-03-31T08:15:43.944Z",
+        "products": [
+            14
+        ]
+    }
+}
+]

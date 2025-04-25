@@ -1,0 +1,62 @@
+[
+{
+    "model": "supplier.factory",
+    "pk": 1,
+    "fields": {
+        "name": "OOO Lumene",
+        "contacts": 2,
+        "provider_factory": null,
+        "level": 0,
+        "debt": "500000.00",
+        "created_at": "2025-03-28T09:51:09.897Z",
+        "products": [
+            1
+        ]
+    }
+},
+{
+    "model": "supplier.factory",
+    "pk": 2,
+    "fields": {
+        "name": "OOO Электроник",
+        "contacts": 1,
+        "provider_factory": null,
+        "level": 0,
+        "debt": "340000.00",
+        "created_at": "2025-03-28T09:53:37.527Z",
+        "products": [
+            2
+        ]
+    }
+},
+{
+    "model": "supplier.factory",
+    "pk": 3,
+    "fields": {
+        "name": "ООО Зажигалка",
+        "contacts": 10,
+        "provider_factory": null,
+        "level": 0,
+        "debt": "3546.00",
+        "created_at": "2025-03-31T08:02:18.745Z",
+        "products": [
+            10
+        ]
+    }
+},
+{
+    "model": "supplier.factory",
+    "pk": 4,
+    "fields": {
+        "name": "ООО Пила",
+        "contacts": 13,
+        "provider_factory": 2,
+        "level": 0,
+        "debt": "456.00",
+        "created_at": "2025-03-31T08:12:33.547Z",
+        "products": [
+            13
+        ]
+    }
+}
+]

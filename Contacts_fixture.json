@@ -1,0 +1,132 @@
+[
+{
+    "model": "supplier.contacts",
+    "pk": 1,
+    "fields": {
+        "title": "OOO Электроник",
+        "email": "electronic@yandex.ru",
+        "country": "Россия",
+        "city": "Истра",
+        "street": "Ленина",
+        "house_number": 5,
+        "created_at": "2025-03-28T09:48:54.466Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 2,
+    "fields": {
+        "title": "OOO Lumene (Завод)",
+        "email": "lumene@yandex.ru",
+        "country": "Финляндия",
+        "city": "Хельсинки",
+        "street": "Елапукинин",
+        "house_number": 4,
+        "created_at": "2025-03-28T09:49:29.564Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 3,
+    "fields": {
+        "title": "ИП Прокопова",
+        "email": "IP7935@yandex.ru",
+        "country": "Россия",
+        "city": "Новосибирск",
+        "street": "Ленина",
+        "house_number": 5,
+        "created_at": "2025-03-28T09:56:47.304Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 4,
+    "fields": {
+        "title": "ООО Электрик",
+        "email": "electric@yandex.ru",
+        "country": "Россия",
+        "city": "Томск",
+        "street": "Ленина",
+        "house_number": 3,
+        "created_at": "2025-03-28T09:59:18.271Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 5,
+    "fields": {
+        "title": "ИП Хомяков",
+        "email": "homiakov@yandex.ru",
+        "country": "Россия",
+        "city": "Иркутск",
+        "street": "Ленина",
+        "house_number": 2,
+        "created_at": "2025-03-28T10:27:59.206Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 6,
+    "fields": {
+        "title": "ИП Галай",
+        "email": "galay@yandex.ru",
+        "country": "Россия",
+        "city": "Бийск",
+        "street": "Ленина",
+        "house_number": 2,
+        "created_at": "2025-03-28T11:33:26.216Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 7,
+    "fields": {
+        "title": "ИП Петров",
+        "email": "petrov@yandex.ru",
+        "country": "Россия",
+        "city": "Иркутск",
+        "street": "Ленина",
+        "house_number": 10,
+        "created_at": "2025-03-31T07:42:31.534Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 8,
+    "fields": {
+        "title": "ООО Чайник",
+        "email": "chaynic@yandex.ru",
+        "country": "Россия",
+        "city": "Новосибирск",
+        "street": "Орлова",
+        "house_number": 5,
+        "created_at": "2025-03-31T07:46:05.189Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 9,
+    "fields": {
+        "title": "ИП Маркова",
+        "email": "markova@yandex.ru",
+        "country": "Франция",
+        "city": "Париж",
+        "street": "Людовика",
+        "house_number": 6,
+        "created_at": "2025-03-31T07:56:43.479Z"
+    }
+},
+{
+    "model": "supplier.contacts",
+    "pk": 10,
+    "fields": {
+        "title": "ООО Зажигалка",
+        "email": "zajigalka@yandex.ru",
+        "country": "Белорусия",
+        "city": "Брест",
+        "street": "Ленина",
+        "house_number": 5,
+        "created_at": "2025-03-31T08:00:21.795Z"
+    }
+}
+]
