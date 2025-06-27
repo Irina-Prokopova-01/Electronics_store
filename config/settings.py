@@ -7,6 +7,19 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Путь к файлу .env в BASE_DIR
+env_file_path = BASE_DIR / '.env'
+
+# Загрузка переменных окружения из .env файла
+load_dotenv(dotenv_path=env_file_path)
+
+
+# Путь к файлу .env
+# env_file_path = os.path.join(os.path.dirname(__file__), '.env')
+# Проверка существования файла .env
+if not os.path.exists(env_file_path):
+    raise FileNotFoundError(f"Файл .env не найден по пути: {env_file_path}")
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG", False) == "True"
