@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 # from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.permissions import AllowAny, IsAuthenticated
+# from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from supplier.models import (Contacts, Factory, Individual_entrepreneur,
                              Products, Retail_chain)
